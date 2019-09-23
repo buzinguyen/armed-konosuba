@@ -1,0 +1,8 @@
+10 - 8 - up
+15 - 4 - left
+20 - 6 - right
+25 - 2 - down
+
+two games:
+	- snake
+	- maze
