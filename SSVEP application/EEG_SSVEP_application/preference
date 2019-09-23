@@ -1,0 +1,12 @@
+{
+    "frequency_amp": "1", 
+    "frequency_digital_amplitude": "256", 
+    "frequency_limit": "40", 
+    "frequency_zoom_ylim": "5", 
+    "packet_number_frequency": "40", 
+    "packet_number_time": "5", 
+    "queue_prescaler": "10", 
+    "real_packet_size": "1500", 
+    "sampling_frequency": "256", 
+    "time_digital_amplitude": "256"
+}

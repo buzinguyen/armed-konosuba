@@ -1,0 +1,2 @@
+test sending a packet at 256 Hz. The packet has the following structure:
+<S> - <a byte counter> - <a byte data> - <E>
