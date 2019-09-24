@@ -1,0 +1,31 @@
+When inputting the new log file template to this app, there are no "Host" and "Location" information and thus the init information is now only 2 columns. So this line is wrong:
+DataLogger.py -> GWSensorLogger:
+
+    def getDataArray(self, gateway, sensor):
+        b = self.getSensorValue(gateway, sensor)[:]
+        c = b.iloc[0].iloc[4:][:]                   <--- WRONG
+        c = list(c)
+        timeArray = []
+        valueArray = []
+        for col in c:
+            try:
+                col = col.replace("'","")
+                for data in col.split(","):
+                    array = data.split("-")
+                    if(array[0] != '' and array[1] != ''):
+                        timeArray.append(array[0])
+                        valueArray.append(array[1])
+            except AttributeError:
+                continue
+
+        data = {'time': timeArray, 'value': valueArray}
+        sensorData = pd.DataFrame(data).drop_duplicates().sort_values(by = ['time'])
+        sensorData['time'] = pd.to_numeric(sensorData['time'])
+        sensorData['value'] = pd.to_numeric(sensorData['value'])
+
+        return sensorData
+
+Need to rewrite this if want to use with the PGSM v8.0
+
+UPDATE:
+The above has been fixed from 4 to 2, but no further changes made to how the logger get init information for report. Need more work.

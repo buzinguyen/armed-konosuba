@@ -1,0 +1,47 @@
+GATEWAY - SENSOR MONITORING APPLICATION - USER GUIDE
+    GENERAL INFORMATION:
+        This application has two components:
+            - This software as the general user interface for interaction with sensor and gatewat data.
+            - The GWSensorLogger module as the backend process running to fetch gateway and sensor data to input this GUI.
+        This application is built upon the file format of the GWSensorLogger output and thus need to be used as is.
+        If there are changes made to the usage of the application, the file format need to be changed. Else, separate building blocks can be re-used.
+        The following application is built upon Python 2.7
+    INSTRUCTION:
+        The following part describes the functions and usage of the application.
+        MAIN TAB:
+            The main tab is divided into the following part:
+            - The control panel on the left to manipulate the plot drawn on the right.
+            - The info panel at the bottom left to show the general information of the tasks done by the application.
+            - The plot application, on the right, is the space used to plot sensors and gateways information as time plot.
+        CONTROL PANEL:
+            The control panel has the following entries:
+            Filter action:
+                Gateway and sensor:
+                This is used to choose within the list of sensors and gateways presented in the chosen log file. To use, first choose a gateway from the list, then click on the sensor drop down menu, the log file will show all the sensors that correspond to the currently chosen gateway. If no gateway is chosen, the sensor list will be empty.
+                Plot: 
+                This is use to choose which plot to apply the action to. If there is no plots drawn, this list will be blank. This list is auto updated with all the plots drawn on the right.
+                Start time and stop time: 
+                This is used to filter out the range of time that the user want to see the information. Input the year/month/day/hour/minute correspond to the data presented the drop-down menus of each category.
+            Plot action:
+                WARNING: Before using this action, the filter action must be used first.
+                Plot Single: 
+                This button will plot a single plot from the chosen combination of gateway - sensor on to the value of the plot filter. If the Plot filter value is "New" then a new plot is drawn. If the plot filter has the name of one of the available plots currently on the canvas, the new plot will be drawn on this plot. By using this button together with the plot filter in the Filter Action section, multiple plots can be drawn on one screen and thus comparison can be made easier.
+                Plot Gateway: 
+                Plot the gateway online/offline information. Similar action as to the Plot Single button can be applied to Plot Gateway. Choose a current plot to plot on or choose "New" to plot as a new plot. By combining this button with the plot filter in the Filter Action section, multiple gateways can be plotted on one screen and thus comparison can be made easier.
+                Plot All: 
+                As each gateway has multiple sensors, this button, when clicked, will draw all the sensors information corresponding to the chosen gateway. This button will not work with the plot filter. Thus, if the user wants to merge any plots on one, use the "Plot Single" and "Plot Gateway" together with the plot filter.
+                Refresh: 
+                This button is used to apply the filter set in the Start time and Stop time widget in the Filter Action, or reset any non-official changes made to the plots.
+                Remove: 
+                To remove a plot. Choose a plot from the drop-down menu on top (Filter Action), then press this button to remove that plot specifically.
+                Remove All: 
+                To remove all the plots in the open tab (any visible plots).
+                Move Left: 
+                To move all the visible plots to the left. The move step can be configured in the Configure Tab.
+                Move Right: 
+                To move all the visible plots to the right. The move step can be configured in the Configure Tab.
+            Info:
+                This section shows all the work done to the application. Frequently check this box for any new information prompted by the application. The information shown is color-coded to support with the viewing. If there is no [WARN] in red, system is good to function.
+        CONFIGURE TAB:
+
+        REPORT TAB:
